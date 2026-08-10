@@ -1,6 +1,19 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+
+
+import { pesquisarFilme } from "./services/tmdbApi.js";
+
+async function testTMDBApi() {
+    try {
+        const resultado = await pesquisarFilme("Interestelar");
+
+        console.log(resultado);
+    } catch (error) {
+        console.error(error);
+    }
+}
 </script>
 
 <template>
@@ -12,9 +25,15 @@ import TheWelcome from './components/TheWelcome.vue'
     </div>
   </header>
 
-  <main>
+  <!--<main>
     <TheWelcome />
-  </main>
+    <button id="teste" @click="testTMDBApi">Test TMDB API</button>
+  </main>-->
+  <main>
+        <button id="teste" @click="testTMDBApi">
+            Test TMDB API
+        </button>
+    </main>
 </template>
 
 <style scoped>
@@ -44,4 +63,7 @@ header {
     flex-wrap: wrap;
   }
 }
+
 </style>
+
+
