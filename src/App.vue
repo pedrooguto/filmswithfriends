@@ -4,12 +4,21 @@ import TheWelcome from './components/TheWelcome.vue'
 
 
 import { pesquisarFilme } from "./services/tmdbApi.js";
-
+var teste="teste";
 async function testTMDBApi() {
     try {
         const resultado = await pesquisarFilme("Interestelar");
 
         console.log(resultado);
+        var resultadoString = "<br>";
+
+        for(let i = 0; i < resultado.results.length; i++) {
+            console.log("Title: " + resultado.results[i].original_title);
+            resultadoString += "Title: " + resultado.results[i].original_title + "<br>";
+        }
+        
+        document.getElementById("teste").innerHTML = "Test variable: " + resultadoString;
+
     } catch (error) {
         console.error(error);
     }
@@ -30,9 +39,11 @@ async function testTMDBApi() {
     <button id="teste" @click="testTMDBApi">Test TMDB API</button>
   </main>-->
   <main>
-        <button id="teste" @click="testTMDBApi">
+        <button id="testebutton" @click="testTMDBApi">
             Test TMDB API
         </button>
+        <h3>Check the console for the API response. </h3>
+        <h3 id="teste">Test variable: {{ teste }}</h3>
     </main>
 </template>
 
