@@ -1,0 +1,82 @@
+# ========================================
+# Node.js
+# ========================================
+
+# Dependências
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Cache
+.npm/
+.yarn/
+.pnpm-store/
+
+# ========================================
+# Variáveis de ambiente / Secrets
+# ========================================
+
+.env
+.env.*
+!.env.example
+
+# ========================================
+# Build
+# ========================================
+
+dist/
+build/
+
+# ========================================
+# Vite
+# ========================================
+
+.vite/
+
+# ========================================
+# Testes / Coverage
+# ========================================
+
+coverage/
+
+# ========================================
+# Arquivos temporários
+# ========================================
+
+*.tmp
+*.temp
+*.swp
+
+# ========================================
+# Sistema operacional
+# ========================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========================================
+# VS Code
+# ========================================
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# ========================================
+# Dados gerados localmente
+# ========================================
+
+# Se você usar esta pasta para dados gerados
+# localmente, eles não serão enviados ao Git.
+backend/storage/
+
+# ========================================
+# Arquivos de configuração local
+# ========================================
+
+*.local
