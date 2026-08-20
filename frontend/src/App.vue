@@ -42,6 +42,26 @@ async function testTMDBApi() {
     <button id="teste" @click="testTMDBApi">Test TMDB API</button>
   </main>-->
   <main>
+        <section class="watchlist-form" aria-labelledby="watchlist-title">
+            <h2 id="watchlist-title">Adicionar watchlist</h2>
+
+            <label for="userName">Nome</label>
+            <input
+                type="text"
+                id="userName"
+                name="userName"
+                placeholder="Nome da pessoa"
+            />
+
+            <label for="watchlistFile">Arquivo da watchlist</label>
+            <input
+                type="file"
+                id="watchlistFile"
+                name="watchlistFile"
+                accept=".csv,text/csv"
+            />
+        </section>
+
         <button id="testebutton" @click="testTMDBApi">
             Test TMDB API
         </button>
@@ -54,6 +74,25 @@ async function testTMDBApi() {
 <style scoped>
 header {
   line-height: 1.5;
+}
+
+.watchlist-form {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.watchlist-form h2 {
+  margin-bottom: 0.25rem;
+}
+
+.watchlist-form input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
 .logo {
@@ -80,5 +119,4 @@ header {
 }
 
 </style>
-
 
